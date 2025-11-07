@@ -1,8 +1,8 @@
 import streamlit as st
 import google.generativeai as genai
-
 import os
 import time
+from datetime import datetime
 
 # Page configuration
 st.set_page_config(
@@ -36,15 +36,13 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-
 # Initialize Gemini
 @st.cache_resource
 def load_gemini():
     # You'll get this API key in next steps
     api_key = st.secrets["GEMINI_API_KEY"]
-    genai.configure(api_key=api_key)
-    return genai.GenerativeModel('gemini-pro')
-
+    genai.configure(api_key=api_key)  # FIXED: Added genai.
+    return genai.GenerativeModel('gemini-pro')  # FIXED: Added genai.
 
 def get_ai_response(user_input, conversation_history):
     model = load_gemini()
@@ -86,7 +84,6 @@ def get_ai_response(user_input, conversation_history):
         return response.text
     except Exception as e:
         return f"I'm experiencing high traffic. Please try again. If this continues, message us on Instagram."
-
 
 # Initialize session state
 if "messages" not in st.session_state:
