@@ -1,0 +1,25 @@
+# SECRETS (most important!)
+.streamlit/secrets.toml    # Your API keys - NEVER upload
+*.env                       # Environment variables
+.env                        # Configuration with secrets
+
+# PYTHON STUFF (not needed on GitHub)
+__pycache__/               # Compiled Python files
+*.pyc                      # Bytecode files
+venv/                      # Virtual environment
+
+# STREAMLIT CONFIG
+.streamlit/config.toml     # Personal settings
+
+# IDE FILES (your editor's temp files)
+.vscode/                   # VS Code settings
+.idea/                     # PyCharm settings
+
+# OS FILES (system files)
+.DS_Store                  # Mac hidden files
+Thumbs.db                  # Windows thumbnails
+
+# DATA FILES (local data)
+emails.csv                 # Email captures
+*.db                       # Databases
+*.log                      # Log files
