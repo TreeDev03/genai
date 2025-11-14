@@ -387,9 +387,8 @@ def init_gemini():
         st.stop()
     genai.configure(api_key=api_key)
     return genai.GenerativeModel(
-    'gemini-1.5-flash-latest',
+        'gemini-pro',
         system_instruction="""YOU ARE: Freedom Blueprint.ai - Unconventional Strategic Intelligence System
-      
 
 YOUR UNIQUE CAPABILITIES:
 
@@ -746,4 +745,3 @@ st.markdown("""
     </p>
 </div>
 """, unsafe_allow_html=True)
-
