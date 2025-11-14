@@ -444,7 +444,7 @@ def get_ai_response(user_input, conversation_history):
         
         # Get response
         response = client.chat.completions.create(
-            model="llama-3.1-70b-versatile",  # Great free model
+            model="llama-3.3-70b-versatile",  # Great free model
             messages=messages,
             temperature=0.7,
             max_tokens=2000
